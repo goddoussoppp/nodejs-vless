@@ -1,55 +1,55 @@
-# VLESS WebSocket 服务端 & Shell API 执行器
+# VLESS WebSocket server & Shell API Actuator
 
-本项目是一个基于 Node.js + WebSocket 协议实现的轻量级 VLESS 代理服务端，支持通过 Web API 执行 Shell 脚本，适用于自建代理和远程脚本执行场景。
+This project is based on Node.js + WebSocket Lightweight implementation of the protocol VLESS proxy server，Support through Web API implement Shell Screenplay，Suitable for scenarios involving self-built agents and remote script execution.
 
-## ✨ 功能特点
+## ✨ Features
 
-- ✅ 支持 VLESS 协议，兼容主流代理客户端
-- 🌐 通过 WebSocket + TLS 实现加密传输
-- 🔐 支持 UUID 鉴权机制
-- 🖥 提供 Web API 接口，远程执行 Shell 脚本
-- 📎 简单易用，环境变量配置灵活
+- ✅ support VLESS protocol，Compatible with mainstream proxy clients
+- 🌐 via WebSocket + TLS Achieve encrypted transmission
+- 🔐 Supports UUID authentication mechanism
+- 🖥 Provide Web API interface，Remote execution of shell scripts
+- 📎 Simple and easy to use, with flexible environment variable configuration
 
-## 📦 环境变量配置
+## 📦 Environment variable configuration
 
-| 变量名      | 说明                                                | 默认值                                 |
+| variable name      | illustrate                                                | default value                                 |
 | ----------- | --------------------------------------------------- | -------------------------------------- |
-| `UUID`      | VLESS 的认证密钥                                    | `10889da6-14ea-4cc8-97fa-6c0bc410f121` |
-| `DOMAIN`    | 访问的域名（用于客户端配置）                        | `example.com`                          |
-| `PORT`      | 服务启动的端口号                                    | `3000`                                 |
-| `REMARKS`   | 节点备注                                            | `nodejs-vless`                         |
-| `WEB_SHELL` | 是否启用 Web Shell（**on** : 启用，**off** : 禁用） | `off`                                  |
+| `UUID`      | VLESS authentication key                                    | `10889da6-14ea-4cc8-97fa-6c0bc410f121` |
+| `DOMAIN`    | Accessed domain（For client configuration）                        | `example.com`                          |
+| `PORT`      | Port number for service startup                                    | `3000`                                 |
+| `REMARKS`   |  Node notes                                           | `nodejs-vless`                         |
+| `WEB_SHELL` | Enable Web Shell?（**on** : Enable，**off** : Disable） | `off`                                  |
 
-## ⚡️ 快速部署
+## ⚡️ Rapid deployment
 
 ```bash
-wget https://raw.githubusercontent.com/vevc/nodejs-vless/refs/heads/main/app.js
-wget https://raw.githubusercontent.com/vevc/nodejs-vless/refs/heads/main/package.json
+wget https://raw.githubusercontent.com/goddoussoppp/nodejs-vless/refs/heads/main/app.js
+wget https://raw.githubusercontent.com/goddoussoppp/nodejs-vless/refs/heads/main/package.json
 npm install
 PORT=3000 UUID=your-uuid DOMAIN=your-domain.com WEB_SHELL=on node app.js
 ```
 
-⚠️ 注意：请妥善保管你的 UUID
+⚠️ Notice：Please keep your belongings safe UUID
 
-## 📡 节点信息查看
+## 📡 View node information
 
-打开浏览器访问：
+Open your browser to access：
 
 ```
 http://your-domain.com:3000/your-uuid
 ```
 
-## 🔧 Shell 脚本远程执行
+## 🔧 Shell script remote execution
 
-你可以通过以下方式执行脚本指令：
+You can execute script commands in the following ways：
 
-### 请求方式
+### Request method
 
 ```
 POST http://your-domain.com:3000/your-uuid/run
 ```
 
-### 示例请求：
+### Example Request：
 
 ```bash
 curl -X POST http://your-domain.com:3000/10889da6-14ea-4cc8-97fa-6c0bc410f121/run -d '
@@ -59,13 +59,13 @@ curl -X POST http://your-domain.com:3000/10889da6-14ea-4cc8-97fa-6c0bc410f121/ru
 '
 ```
 
-## 🛡 安全建议
+## 🛡 Safety Recommendations
 
-- 启动时请更改默认 UUID，并妥善保管
-- 推荐部署 TLS 并启用防火墙限制请求来源
-- Web API 提供强大权限，建议使用认证反向代理保护接口
+- Please change the default settings at startup UUID，And keep it safe
+- It is recommended to deploy TLS and enable firewall restrictions on request origins
+- Web APIs provide powerful permissions，It is recommended to use an authentication reverse proxy to protect the interface
 
-## 📜 许可证
+## 📜 license
 
-本项目采用 MIT 许可证，欢迎学习与贡献，禁止非法用途。
+This project is licensed under the MIT license，Learning and contributions are welcome, but illegal uses are prohibited.
 
