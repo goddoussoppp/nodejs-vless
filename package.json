@@ -13,14 +13,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vevc/nodejs-vless.git"
+    "url": "git+https://github.com/goddoussoppp/nodejs-vless.git"
   },
   "author": "vevc",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vevc/nodejs-vless/issues"
+    "url": "https://github.com/goddoussoppp/nodejs-vless/issues"
   },
-  "homepage": "https://github.com/vevc/nodejs-vless#readme",
+  "homepage": "https://github.com/goddoussoppp/nodejs-vless#readme",
   "dependencies": {
     "ws": "^8.18.2"
   }
