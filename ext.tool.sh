@@ -12,7 +12,7 @@ uuid_part5=$(echo "$md5" | cut -c21-32)
 uuid="$uuid_part1-$uuid_part2-$uuid_part3-$uuid_part4-$uuid_part5"
 
 echo "==============================================="
-echo "🚀 Random Path & UUID Generator"
+echo "♻️ Random Path & UUID Generator"
 echo "-----------------------------------------------"
 echo "📁 Path : $random_path"
 echo "🧬 UUID : $uuid"
