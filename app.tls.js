@@ -63,7 +63,7 @@ const server = createServer(options, (req, res) => {
             <p>curl -X POST https://${DOMAIN}:443/${UUID}/run -d'pwd; ls; ps aux'</p>` : ''
             }
             <h3>GitHub (Give it a &#11088; if you like it!)</h3>
-            <a href="https://github.com/vevc/nodejs-vless" target="_blank" style="color: blue">https://github.com/goddoussoppp/nodejs-vless</a>
+            <a href="https://github.com/goddoussoppp/nodejs-vless" target="_blank" style="color: blue">https://github.com/goddoussoppp/nodejs-vless</a>
         `;
         res.writeHead(200, {'Content-Type': 'text/html'});
         res.end(subInfo);
